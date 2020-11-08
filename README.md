@@ -7,7 +7,7 @@
 weights/
 ├── synthia/
 ├── gta5/
-MMD/
+PLF/
 ├── train_deeplabv2/
 ├── train_deeplabv3+/
 ├── ...
@@ -38,7 +38,7 @@ Warehouse/
 ```
 ### Training
 Quick start:
-1. Down the pre-generated pseudo label here. (currently unavilable)
+1. Download the pre-generated pseudo label here.
 2. Place the pseudo label in the `Cityscapes/data/gtFine` folder and train with the following command:
 ```
 cd train_deeplabv3+
@@ -69,33 +69,16 @@ python train.py
 ================ GTA5 ================
 { Deeplabv2 }
 cd train_deeplabv2
-python test.py --restore-from ../../weights/weights/gta5/deeplabv2/resnet/certainty/model_50.13.pth
-python test.py --restore-from ../../weights/weights/gta5/deeplabv2/resnet/priority/model_52.96.pth
-python test.py --restore-from ../../weights/weights/gta5/deeplabv2/resnet/majority/model_52.76.pth
-python test.py --backbone drn --restore-from ../../weights/weights/gta5/deeplabv2/drn/certainty/model_53.83.pth
-python test.py --backbone drn --restore-from ../../weights/weights/gta5/deeplabv2/drn/priority/model_54.35.pth
-python test.py --backbone drn --restore-from ../../weights/weights/gta5/deeplabv2/drn/majority/model_55.25.pth
-python test.py --backbone mobilenet --restore-from ../../weights/weights/gta5/deeplabv2/mobilenet/certainty/model_48.23.pth
-python test.py --backbone mobilenet --restore-from ../../weights/weights/gta5/deeplabv2/mobilenet/priority/model_51.35.pth
-python test.py --backbone mobilenet --restore-from ../../weights/weights/gta5/deeplabv2/mobilenet/majority/model_50.98.pth
-
+python test.py --restore-from ../../weights/weights/gta5/deeplabv2/resnet/PLF/model_52.76.pth
 { Deeplabv3+ }
 cd train_deeplabv3+
-python test.py --restore-from ../../weights/weights/gta5/deeplabv3+/resnet/certainty/model_51.97.pth
-python test.py --restore-from ../../weights/weights/gta5/deeplabv3+/resnet/priority/model_55.12.pth
-python test.py --restore-from ../../weights/weights/gta5/deeplabv3+/resnet/majority/model_54.75.pth
-python test.py --backbone drn --restore-from ../../weights/weights/gta5/deeplabv3+/drn/certainty/model_54.85.pth
-python test.py --backbone drn --restore-from ../../weights/weights/gta5/deeplabv3+/drn/priority/model_57.94.pth
 python test.py --backbone drn --restore-from ../../weights/weights/gta5/deeplabv3+/drn/majority/model_57.65.pth
-python test.py --backbone mobilenet --restore-from ../../weights/weights/gta5/deeplabv3+/mobilenet/certainty/model_51.64.pth
-python test.py --backbone mobilenet --restore-from ../../weights/weights/gta5/deeplabv3+/mobilenet/priority/model_54.74.pth
 python test.py --backbone mobilenet --restore-from ../../weights/weights/gta5/deeplabv3+/mobilenet/majority/model_54.95.pth
 
 ============== SYNTHIA ===============
 { Deeplabv2 }
 cd train_deeplabv2
 python test.py --num-classes 16 --source-domain synthia --restore-from ../../weights/weights/synthia/deeplabv2/resnet/model_47.93.pth
-
 { Deeplabv3+ }
 cd train_deeplabv3+
 python test.py --num-classes 16 --source-domain synthia --backbone drn --restore-from ../../weights/weights/synthia/deeplabv3+/drn/model_51.76.pth
@@ -103,7 +86,7 @@ python test.py --num-classes 16 --source-domain synthia --backbone mobilenet --r
 ```
 
 ### Pretrained Weights
-You can download the pretrained model here. (currently unavilable)
+You can download the pretrained model here.
 
 ### Prerequisites
 - Python 3.6
