@@ -42,7 +42,7 @@ Quick Start:
 2. Place the pseudo label in the `Cityscapes/data/gtFine` folder and train with the following command:
 ```
 cd train_deeplabv3+
-python train.py --class-balance --often-balance --restore-from ../../weights/weights/gta5/deeplabv2/resnet/PLF/model_52.76.pth
+python train.py --class-balance --often-balance --restore-from ../../weights/weights/gta5/source/resnet/model_30.32.pth
 ```
 
 The whole training procedure:
