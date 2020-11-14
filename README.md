@@ -38,8 +38,8 @@ Warehouse/
 ```
 ### Training
 Quick Start:
-1. Download the pre-generated pseudo label [here](https://drive.google.com/drive/folders/1OwoHsM4pV1aQLrhm9cH7EV3286o4KXuN?usp=sharing).
-2. Place the pseudo label in the `Cityscapes/data/gtFine` folder and train with the following command:
+1. Download the pre-generated pseudo labels [here](https://drive.google.com/drive/folders/1OwoHsM4pV1aQLrhm9cH7EV3286o4KXuN?usp=sharing).
+2. Place the pseudo labels in `Cityscapes/data/gtFine` folder and train the model with the following commands:
 ```
 cd train_deeplabv3+
 python train.py --class-balance --often-balance --restore-from ../../weights/weights/gta5/source/resnet/model_30.32.pth
@@ -58,7 +58,7 @@ The whole training procedure:
 cd label_fusion
 python3 label_fusion.py
 ```
-4. Place the pseudo label in the `Cityscapes/data/gtFine` folder and follow the instructions in "Quick Start" to train the model.
+4. Place the pseudo labels in `Cityscapes/data/gtFine` folder and follow the instructions in "Quick Start" to train the model.
 
 ### Testing
 ```
@@ -82,7 +82,7 @@ python test.py --num-classes 16 --source-domain synthia --backbone mobilenet --r
 ```
 
 ### Pretrained Weights
-You can download the pretrained model [here](https://drive.google.com/drive/folders/1OwoHsM4pV1aQLrhm9cH7EV3286o4KXuN?usp=sharing).
+You can download the pre-trained weights [here](https://drive.google.com/drive/folders/1OwoHsM4pV1aQLrhm9cH7EV3286o4KXuN?usp=sharing).
 
 ### Prerequisites
 - Python 3.6
