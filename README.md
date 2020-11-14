@@ -1,4 +1,4 @@
-# Semantic Segmentation Based Unsupervised Domain Adaptation via Pseudo-Label Fusion 
+# Semantic Segmentation Based Unsupervised Domain Adaptation via Pseudo Label Fusion 
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 
@@ -37,12 +37,12 @@ Warehouse/
 │   │   |   |   ├── ...
 ```
 ### Training
-Quick start:
-1. Download the pre-generated pseudo label here.
+Quick Start:
+1. Download the pre-generated pseudo label [here](https://drive.google.com/drive/folders/1OwoHsM4pV1aQLrhm9cH7EV3286o4KXuN?usp=sharing).
 2. Place the pseudo label in the `Cityscapes/data/gtFine` folder and train with the following command:
 ```
 cd train_deeplabv3+
-python train.py 
+python train.py --class-balance --often-balance --restore-from ../../weights/weights/gta5/deeplabv2/resnet/PLF/model_52.76.pth
 ```
 
 The whole training procedure:
@@ -51,18 +51,14 @@ The whole training procedure:
   - [CRST](https://github.com/yzou2/CRST)
   - [CBST](https://github.com/yzou2/CBST)
   - [R-MRNet](https://github.com/layumi/Seg-Uncertainty)
-2. Generate the pseudo labels and the output tensor
+2. Generate the pseudo labels and the output tensors. (NOTE: it is recommended that the certainty tensors should be first mapped to 0~100 and stored using byte tensors for memory conservation.)
+
 3. Fuse the pseudo labels
 ```
 cd label_fusion
 python3 label_fusion.py
 ```
-4. Place the pseudo label in the `Cityscapes/data/gtFine` folder and train with the following command:
-```
-cd train_deeplabv3+
-python train.py 
-```
-
+4. Place the pseudo label in the `Cityscapes/data/gtFine` folder and follow the instructions in "Quick Start" to train the model.
 
 ### Testing
 ```
@@ -72,21 +68,21 @@ cd train_deeplabv2
 python test.py --restore-from ../../weights/weights/gta5/deeplabv2/resnet/PLF/model_52.76.pth
 { Deeplabv3+ }
 cd train_deeplabv3+
-python test.py --backbone drn --restore-from ../../weights/weights/gta5/deeplabv3+/drn/majority/model_57.65.pth
-python test.py --backbone mobilenet --restore-from ../../weights/weights/gta5/deeplabv3+/mobilenet/majority/model_54.95.pth
+python test.py --backbone drn --restore-from ../../weights/weights/gta5/deeplabv3+/drn/PLF/model_57.65.pth
+python test.py --backbone mobilenet --restore-from ../../weights/weights/gta5/deeplabv3+/mobilenet/PLF/model_54.95.pth
 
 ============== SYNTHIA ===============
 { Deeplabv2 }
 cd train_deeplabv2
-python test.py --num-classes 16 --source-domain synthia --restore-from ../../weights/weights/synthia/deeplabv2/resnet/model_47.93.pth
+python test.py --num-classes 16 --source-domain synthia --restore-from ../../weights/weights/synthia/deeplabv2/resnet/PLF/model_47.93.pth
 { Deeplabv3+ }
 cd train_deeplabv3+
-python test.py --num-classes 16 --source-domain synthia --backbone drn --restore-from ../../weights/weights/synthia/deeplabv3+/drn/model_51.76.pth
-python test.py --num-classes 16 --source-domain synthia --backbone mobilenet --restore-from ../../weights/weights/synthia/deeplabv3+/mobilenet/model_50.28.pth
+python test.py --num-classes 16 --source-domain synthia --backbone drn --restore-from ../../weights/weights/synthia/deeplabv3+/drn/PLF/model_51.76.pth
+python test.py --num-classes 16 --source-domain synthia --backbone mobilenet --restore-from ../../weights/weights/synthia/deeplabv3+/mobilenet/PLF/model_50.28.pth
 ```
 
 ### Pretrained Weights
-You can download the pretrained model here.
+You can download the pretrained model [here](https://drive.google.com/drive/folders/1OwoHsM4pV1aQLrhm9cH7EV3286o4KXuN?usp=sharing).
 
 ### Prerequisites
 - Python 3.6
