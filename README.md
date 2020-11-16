@@ -38,7 +38,7 @@ Warehouse/
 ```
 ### Training
 Quick Start:
-1. Download the pre-generated pseudo labels [here](https://drive.google.com/drive/folders/1OwoHsM4pV1aQLrhm9cH7EV3286o4KXuN?usp=sharing).
+1. Download the pre-generated pseudo labels [here](https://drive.google.com/drive/folders/1NjMDpjH6ESN9Nb9m9d48LLctvDsQn-uV?usp=sharing).
 2. Place the pseudo labels in `Cityscapes/data/gtFine` folder and train the model with the following commands:
 ```
 cd train_deeplabv3+
@@ -82,7 +82,7 @@ python test.py --num-classes 16 --source-domain synthia --backbone mobilenet --r
 ```
 
 ### Pretrained Weights
-You can download the pre-trained weights [here](https://drive.google.com/drive/folders/1OwoHsM4pV1aQLrhm9cH7EV3286o4KXuN?usp=sharing).
+You can download the pre-trained weights [here](https://drive.google.com/drive/folders/1NjMDpjH6ESN9Nb9m9d48LLctvDsQn-uV?usp=sharing).
 
 ### Prerequisites
 - Python 3.6
