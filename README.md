@@ -8,14 +8,18 @@ weights/
 |   ├── gta5/
 |   |   ├── T/
 |   |   ├── source/
-|   |   ├── train_deeplabv2/
-|   |   ├── train_deeplabv3+/
+|   |   ├── deeplabv2/
+|   |   ├── deeplabv3+/
 |   |   |   ├── mobilenet/
 |   |   |   ├── resnet/
 |   |   |   ├── drn/
 |   |   |   |   ├── PLF/
 |   |   |   |   |   ├── model_57.65.pth
-...
+PLF/
+├── label_fusion/
+├── train_deeplabv2/
+├── train_deeplabv3+/
+├── ...
 Warehouse/
 ├── SYNTHIA/
 │   ├── labels/
