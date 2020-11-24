@@ -17,8 +17,8 @@ SOURCE_DOMAIN = 'gta5'
 TARGET_DOMAIN = 'cityscapes'
 IGNORE_LABEL = 255
 NUM_CLASSES = 19
-BATCH_SIZE = 2
-GPU = 3
+BATCH_SIZE = 1
+GPU = 0
 INPUT_SIZE_TARGET = '2048,1024'
 GT_SIZE = '2048,1024'
 FUSION_MODE = 'PLF'
@@ -91,8 +91,8 @@ def main():
                     max_iters=total/args.batch_size),
         batch_size=args.batch_size, shuffle=False, num_workers=1, pin_memory=True, drop_last=False)
 
-        targetloader_Mobile = data.DataLoader(
-            cityscapesExtraction(args.data_dir_target, args.data_list_target, set='Mobile_PL_SYNTHIA', 
+        targetloader_CBST = data.DataLoader(
+            cityscapesExtraction(args.data_dir_target, args.data_list_target, set='CBST_PL_SYNTHIA', 
                     max_iters=total/args.batch_size),
         batch_size=args.batch_size, shuffle=False, num_workers=1, pin_memory=True, drop_last=False)
 
@@ -102,23 +102,23 @@ def main():
         batch_size=args.batch_size, shuffle=False, num_workers=1, pin_memory=True, drop_last=False)
     
     elif args.source_domain == 'gta5':
-        targetloader_Seg_Uncertainty = data.DataLoader(
-            cityscapesExtraction(args.data_dir_target, args.data_list_target, set='Seg_Uncertainty',
+        targetloader_MRNet = data.DataLoader(
+            cityscapesExtraction(args.data_dir_target, args.data_list_target, set='MRNet_PL_GTA',
                     max_iters=total/args.batch_size),
         batch_size=args.batch_size, shuffle=False, num_workers=1, pin_memory=True, drop_last=False)
 
         targetloader_DACS = data.DataLoader(
-            cityscapesExtraction(args.data_dir_target, args.data_list_target, set='DACS', 
+            cityscapesExtraction(args.data_dir_target, args.data_list_target, set='DACS_PL_GTA', 
                     max_iters=total/args.batch_size),
         batch_size=args.batch_size, shuffle=False, num_workers=1, pin_memory=True, drop_last=False)
 
         targetloader_MRKLD = data.DataLoader(
-            cityscapesExtraction(args.data_dir_target, args.data_list_target, set='MRKLD', 
+            cityscapesExtraction(args.data_dir_target, args.data_list_target, set='MRKLD_PL_GTA', 
                     max_iters=total/args.batch_size),
         batch_size=args.batch_size, shuffle=False, num_workers=1, pin_memory=True, drop_last=False)
 
         targetloader_CBST = data.DataLoader(
-            cityscapesExtraction(args.data_dir_target, args.data_list_target, set='CBST', 
+            cityscapesExtraction(args.data_dir_target, args.data_list_target, set='CBST_PL_GTA', 
                     max_iters=total/args.batch_size),
         batch_size=args.batch_size, shuffle=False, num_workers=1, pin_memory=True, drop_last=False)
     
@@ -129,7 +129,7 @@ def main():
 
     if args.source_domain == 'synthia':
         # evaluate
-        for index, img_data in enumerate(zip(targetloader_MRKLD, targetloader_Mobile, targetloader_MRNet) ):
+        for index, img_data in enumerate(zip(targetloader_MRKLD, targetloader_CBST, targetloader_MRNet) ):
             print(str(index*args.batch_size)+" / 2975")
 
             batch_0, batch_1, batch_2 = img_data
@@ -148,7 +148,7 @@ def main():
             ### ----------------
             # aggregation
             # [index, method]
-            # (0:MRKLD) (1:Mobile) (2:MRNet)
+            # (0:MRKLD) (1:CBST) (2:R-MRNet)
             extraction_list = [
                 [4,0], 
                 [3,0],
@@ -197,7 +197,7 @@ def main():
 
     elif args.source_domain == 'gta5':
         # evaluate
-        for index, img_data in enumerate(zip(targetloader_Seg_Uncertainty, targetloader_DACS, targetloader_MRKLD, targetloader_CBST) ):
+        for index, img_data in enumerate(zip(targetloader_MRNet, targetloader_DACS, targetloader_MRKLD, targetloader_CBST) ):
             print(str(index*args.batch_size)+" / 2975")
 
             batch_0, batch_1, batch_2, batch_3 = img_data
@@ -219,7 +219,7 @@ def main():
             ### ----------------
             # aggregation
             # [index, method]
-            # (0:MRNet) (1:DACS) (2:MRKLD) (3:CBST)
+            # (0:R-MRNet) (1:DACS) (2:MRKLD) (3:CBST)
             
             extraction_list = [
                 [16,3],

@@ -218,7 +218,7 @@ def main():
 
         writer = SummaryWriter(args.log_dir)
     
-    # load mIOU
+    # load mIOU (FOR EARLY STOPPING)
     best_mIoUs = args.mIOU
 
     for i_iter in range(args.num_steps):

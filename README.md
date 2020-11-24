@@ -1,16 +1,20 @@
 # Semantic Segmentation Based Unsupervised Domain Adaptation via Pseudo Label Fusion 
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
-
 ### File Structure
 ```
 weights/
-├── synthia/
-├── gta5/
-PLF/
-├── train_deeplabv2/
-├── train_deeplabv3+/
-├── ...
+├── weights/
+|   ├── synthia/
+|   ├── gta5/
+|   |   ├── T/
+|   |   ├── source/
+|   |   ├── train_deeplabv2/
+|   |   ├── train_deeplabv3+/
+|   |   |   ├── mobilenet/
+|   |   |   ├── resnet/
+|   |   |   ├── drn/
+|   |   |   |   ├── PLF/
+|   |   |   |   |   ├── model_57.65.pth
 ...
 Warehouse/
 ├── SYNTHIA/
@@ -95,5 +99,5 @@ pip install requirement.txt
 
 ### Acknowledgement
 The code is heavily borrowed from the following works:
-- MRNet: https://github.com/layumi/Seg-Uncertainty
+- RMRNet: https://github.com/layumi/Seg-Uncertainty
 - Deeplabv3+: https://github.com/jfzhang95/pytorch-deeplab-xception
