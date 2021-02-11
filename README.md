@@ -1,4 +1,4 @@
-# Semantic Segmentation Based Unsupervised Domain Adaptation via Pseudo Label Fusion 
+# Cascaded Fusion Scheduling Strategy for Semantic Segmentation Based Unsupervised Domain Adaption
 
 ### File Structure
 ```
@@ -6,15 +6,9 @@ weights/
 ├── weights/
 |   ├── synthia/
 |   ├── gta5/
-|   |   ├── T/
 |   |   ├── source/
-|   |   ├── deeplabv2/
-|   |   ├── deeplabv3+/
-|   |   |   ├── mobilenet/
-|   |   |   ├── resnet/
-|   |   |   ├── drn/
-|   |   |   |   ├── PLF/
-|   |   |   |   |   ├── model_57.65.pth
+|   |   ├── GPLF/
+|   |   |   ├── model_57.27.pth
 PLF/
 ├── label_fusion/
 ├── train_deeplabv2/
@@ -50,7 +44,7 @@ Quick Start:
 2. Place the pseudo labels in `Cityscapes/data/gtFine` folder and train the model with the following commands:
 ```
 cd train_deeplabv3+
-python train.py --class-balance --often-balance --restore-from ../../weights/weights/gta5/source/resnet/model_30.32.pth
+python train.py --class-balance --often-balance --backbone drn --restore-from ../../weights/weights/gta5/source/model_34.80.pth
 ```
 
 The whole training procedure:
@@ -71,26 +65,20 @@ python3 label_fusion.py
 ### Testing
 ```
 ================ GTA5 ================
-{ Deeplabv2 }
-cd train_deeplabv2
-python test.py --restore-from ../../weights/weights/gta5/deeplabv2/resnet/PLF/model_52.76.pth
 { Deeplabv3+ }
 cd train_deeplabv3+
-python test.py --backbone drn --restore-from ../../weights/weights/gta5/deeplabv3+/drn/PLF/model_57.65.pth
-python test.py --backbone mobilenet --restore-from ../../weights/weights/gta5/deeplabv3+/mobilenet/PLF/model_54.95.pth
+python test.py --backbone drn --restore-from ../../weights/weights/gta5/GPLF/model_57.27.pth
 
 ============== SYNTHIA ===============
-{ Deeplabv2 }
-cd train_deeplabv2
-python test.py --num-classes 16 --source-domain synthia --restore-from ../../weights/weights/synthia/deeplabv2/resnet/PLF/model_47.93.pth
 { Deeplabv3+ }
 cd train_deeplabv3+
-python test.py --num-classes 16 --source-domain synthia --backbone drn --restore-from ../../weights/weights/synthia/deeplabv3+/drn/PLF/model_51.76.pth
-python test.py --num-classes 16 --source-domain synthia --backbone mobilenet --restore-from ../../weights/weights/synthia/deeplabv3+/mobilenet/PLF/model_50.28.pth
+python test.py --num-classes 16 --source-domain synthia --backbone drn --restore-from ../../weights/weights/synthia/GPLF/model_51.76.pth
 ```
 
 ### Pretrained Weights
 You can download the pre-trained weights [here](https://drive.google.com/drive/folders/1NjMDpjH6ESN9Nb9m9d48LLctvDsQn-uV?usp=sharing).
+> Feel free to ask us for the pre-trained weights for other backbones (e.g., Deeplabv2(ResNet-101)).
+> E-mail: a0922866854@gmail.com
 
 ### Prerequisites
 - Python 3.6
