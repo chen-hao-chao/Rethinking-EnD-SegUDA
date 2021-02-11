@@ -77,8 +77,6 @@ python test.py --num-classes 16 --source-domain synthia --backbone drn --restore
 
 ### Pretrained Weights
 You can download the pre-trained weights [here](https://drive.google.com/drive/folders/1NjMDpjH6ESN9Nb9m9d48LLctvDsQn-uV?usp=sharing).
-> Feel free to ask us for the pre-trained weights for other backbones (e.g., Deeplabv2(ResNet-101)).
-> E-mail: a0922866854@gmail.com
 
 ### Prerequisites
 - Python 3.6
@@ -88,6 +86,12 @@ Download the dependencies:
 ```
 pip install requirement.txt
 ```
+
+### Questions?
+> Feel free to ask us if you have any question.
+
+> E-mail: a0922866854@gmail.com
+
 
 ### Acknowledgement
 The code is heavily borrowed from the following works:
