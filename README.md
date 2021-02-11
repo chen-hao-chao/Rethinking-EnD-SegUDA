@@ -76,7 +76,7 @@ python test.py --num-classes 16 --source-domain synthia --backbone drn --restore
 ```
 
 ### Pretrained Weights
-You can download the pre-trained weights [here](https://drive.google.com/drive/folders/1NjMDpjH6ESN9Nb9m9d48LLctvDsQn-uV?usp=sharing).
+You can download the pre-trained weights [here](https://drive.google.com/file/d/1ixgzvK2DDbre-bE8S0ZV4YJ9zzI-6Wr6/view?usp=sharing).
 
 ### Prerequisites
 - Python 3.6
