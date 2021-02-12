@@ -87,11 +87,6 @@ Download the dependencies:
 pip install requirement.txt
 ```
 
-### Questions?
-> Feel free to ask us if you have any question.
-
-> E-mail: (Currently Unavailable)
-
 
 ### Acknowledgement
 The code is heavily borrowed from the following works:
