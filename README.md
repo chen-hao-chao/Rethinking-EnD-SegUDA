@@ -1,4 +1,4 @@
-# Cascaded Fusion Scheduling Strategy for Semantic Segmentation Based Unsupervised Domain Adaption
+# Rethinking Ensemble-Distillation for Semantic Segmentation Based Unsupervised Domain Adaption
 
 ### File Structure
 ```
