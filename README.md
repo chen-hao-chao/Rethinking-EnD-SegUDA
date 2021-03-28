@@ -6,10 +6,8 @@ weights/
 ├── weights/
 |   ├── synthia/
 |   ├── gta5/
-|   |   ├── source/
-|   |   ├── GPLF/
-|   |   |   ├── model_57.27.pth
-PLF/
+|   |   ├── gta5_ours_drn_57.98.pth
+Rethinking_EnD_UDA/
 ├── label_fusion/
 ├── train_deeplabv2/
 ├── train_deeplabv3+/
@@ -18,7 +16,6 @@ Warehouse/
 ├── SYNTHIA/
 │   ├── labels/
 │   ├── images/
-│   ├── depth/
 |   |   ├── 0000000.png
 |   |   ├── 0000001.png
 |   |   ├── ...
@@ -67,16 +64,16 @@ python3 label_fusion.py
 ================ GTA5 ================
 { Deeplabv3+ }
 cd train_deeplabv3+
-python test.py --backbone drn --restore-from ../../weights/weights/gta5/GPLF/model_57.27.pth
+python test.py --backbone drn --restore-from ../../weights/weights/gta5/gta5_ours_drn_57.98.pth
 
 ============== SYNTHIA ===============
 { Deeplabv3+ }
 cd train_deeplabv3+
-python test.py --num-classes 16 --source-domain synthia --backbone drn --restore-from ../../weights/weights/synthia/GPLF/model_51.76.pth
+python test.py --num-classes 16 --source-domain synthia --backbone drn --restore-from ../../weights/weights/synthia/synthia_ours_drn_59.95.pth
 ```
 
 ### Pretrained Weights
-You can download the pre-trained weights [here](https://drive.google.com/file/d/1ixgzvK2DDbre-bE8S0ZV4YJ9zzI-6Wr6/view?usp=sharing).
+You can download the pre-trained weights [here](https://drive.google.com/drive/folders/18OFsUlhPvYdKyiSGoLbRIgbpzK4OOX2c?usp=sharing).
 
 ### Prerequisites
 - Python 3.6
