@@ -7,6 +7,7 @@ weights/
 |   ├── synthia/
 |   ├── gta5/
 |   |   ├── gta5_ours_drn_57.98.pth
+|   |   ├── ...
 Rethinking_EnD_UDA/
 ├── label_fusion/
 ├── train_deeplabv2/
