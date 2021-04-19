@@ -1,5 +1,9 @@
 # Rethinking Ensemble-Distillation for Semantic Segmentation Based Unsupervised Domain Adaption
 
+### Conference
+- CVPR Workshop (LLID) 2021
+- NVIDIA GTC 2021
+
 ### File Structure
 ```
 weights/
