@@ -1,8 +1,10 @@
-# Rethinking Ensemble-Distillation for Semantic Segmentation Based Unsupervised Domain Adaption
+# Rethinking Ensemble-Distillation for Semantic Segmentation Based Unsupervised Domain Adaptation
 
-### Conference
-- CVPR Workshop (LLID) 2021
-- NVIDIA GTC 2021
+This repository includes the PyTorch implementation for the paper [Rethinking Ensemble-Distillation for Semantic Segmentation Based Unsupervised Domain Adaptation](https://openaccess.thecvf.com/content/CVPR2021W/LLID/papers/Chao_Rethinking_Ensemble-Distillation_for_Semantic_Segmentation_Based_Unsupervised_Domain_Adaption_CVPRW_2021_paper.pdf).
+
+[[Poster]]() [[Video]]()
+
+---
 
 ### File Structure
 ```
@@ -88,9 +90,20 @@ Download the dependencies:
 ```
 pip install requirement.txt
 ```
-
+### Reference
+If you find the code useful for your research, please consider citing
+```
+@InProceedings{Chao_2021_CVPR,
+    author    = {Chao, Chen-Hao and Cheng, Bo-Wun and Lee, Chun-Yi},
+    title     = {Rethinking Ensemble-Distillation for Semantic Segmentation Based Unsupervised Domain Adaption},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2021},
+    pages     = {2610-2620}
+}
+```
 
 ### Acknowledgement
-The code is heavily borrowed from the following works:
-- RMRNet: https://github.com/layumi/Seg-Uncertainty
+The code is partially borrowed from the following works:
+- R-MRNet: https://github.com/layumi/Seg-Uncertainty
 - Deeplabv3+: https://github.com/jfzhang95/pytorch-deeplab-xception
