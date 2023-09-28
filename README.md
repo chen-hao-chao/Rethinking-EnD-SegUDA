@@ -2,7 +2,12 @@
 
 This repository includes the PyTorch implementation for the paper [Rethinking Ensemble-Distillation for Semantic Segmentation Based Unsupervised Domain Adaptation](https://openaccess.thecvf.com/content/CVPR2021W/LLID/papers/Chao_Rethinking_Ensemble-Distillation_for_Semantic_Segmentation_Based_Unsupervised_Domain_Adaption_CVPRW_2021_paper.pdf).
 
-[[Poster]]() [[Video]]()
+[[Video]](https://www.youtube.com/watch?v=Yvb0lqxiC18)
+
+<p align="center">
+  <img src="https://hackmd.io/_uploads/r1aqCWmeT.png" alt="EnD-PLF" width="800">
+</p>
+
 
 ---
 
